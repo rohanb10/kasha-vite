@@ -1,0 +1,113 @@
+.project .title {
+    font-size: 5rem;
+    /* font-family: Nesans; */
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
+.project .subtitle {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #666;
+    text-align: center;
+}
+
+.project .banner, .project .photo-preview {
+    width: auto;
+    height: 100%;
+    aspect-ratio: 3/2;
+}
+.project .banner {
+    margin: 2rem auto .5rem;
+}
+
+.project .details-box {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: baseline;
+    border-radius: .5rem;
+    gap: .5rem;
+}
+.detail {
+    max-width: calc(25% - 1rem);
+    padding: .5rem 1rem;
+    background-color: rgba(38, 71, 157,.05);
+    background-color: var(--kasha-bg);
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.detail .detail-text {
+    cursor: default;
+}
+.detail .detail-icon {
+    height: 1.5rem;
+    display: block;
+    opacity: .25;
+}
+.detail .detail-title {
+    color: #666;
+    text-transform: uppercase;
+    font-size: .7rem;
+    font-weight: 600;
+    margin-bottom: .25rem;
+}
+.detail .detail-value {
+    font-weight: 500;
+}
+
+.project .description {
+    font-size: 1.25rem;
+}
+.project .description p {
+    margin: 1rem 0;
+}
+.project .dot-photo {
+    cursor: pointer;
+}
+.project .dot-photo:focus-within {
+    outline: 3px solid var(--kasha-bg);
+    outline-offset: 4px;
+}
+.project .dot-photo, .project .dots {
+    /* max-height: calc(100vh - 100px); */
+    margin: 0 auto;
+}
+.project .photo-caption {
+    margin: .25rem .5rem 1.25rem;   
+}
+.lg-outer .lg-thumb-item.active, .lg-outer .lg-thumb-item:hover {
+    border-color: var(--kasha-primary);
+}
+
+@media screen and (max-width: 800px) {
+    .project .title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: unset;
+    }
+    .project .subtitle {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        text-align: unset;
+    }
+    .project .banner {
+        margin: 1rem 0 .5rem;
+    }
+    .project .details-box {
+        flex-wrap: wrap;
+        flex-direction: row;
+        background-color: var(--kasha-bg);
+        gap: unset;
+    }
+    .project .details-box .detail {
+        max-width: unset;
+        min-width: 50%;
+        gap: .5rem;
+        align-items: flex-end;
+    }
+    .project .details-box .detail-icon {
+        height: 1.25rem;
+    }
+}

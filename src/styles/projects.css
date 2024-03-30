@@ -1,0 +1,91 @@
+.projects a {
+    text-decoration: none;
+    outline: none;
+}
+.projects .p-project {
+    padding: 1rem 0;
+    border-bottom: 3px solid black;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 2rem;
+    transition: .3s all ease-in-out;
+}
+.projects a:first-of-type .p-project {
+    border-top: 3px solid black;
+}
+.projects .p-project .title {
+    display: block;
+    font-size: 3rem;
+    transition: font-weight .3s ease-in-out;
+    font-weight: 700;
+    line-height: 1;
+}
+.projects .p-project .title:hover, .projects a:focus-within .p-project .title {
+    color: var(--kasha-primary);
+}
+.projects .project-info {
+    width: 65%;
+}
+.projects .project-thumb {
+    width: 35%;
+}
+.projects .project-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.projects .detail {
+    max-width: unset;
+    background-color: unset;
+    padding: 0;
+    gap: .5rem;
+}
+.projects .detail.type .detail-value {
+    font-weight: 400;
+}
+.projects .detail.location .detail-value {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+.projects .detail .detail-icon {
+    display: none;
+}
+.projects .image {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 3/2;
+}
+
+.projects .p-project .image.loading {
+    clip-path: circle(0% at 16px 16px);
+}
+
+@media screen and (max-width: 800px) {
+    .projects .p-project {
+        flex-wrap: wrap;
+        padding: 1.5rem 0 1.5rem;
+        gap: .25rem;
+    }
+    .projects .project-info, .p-project .project-thumb {
+        width: 100%;
+    }
+    .projects .p-project .title {
+        text-align: center;
+        font-size: 2rem;
+    }
+    .projects .details-box {
+        display: flex;
+        gap: 1rem;
+        margin-top: .25rem;
+        justify-content: center;
+        display: none;
+    }
+    .projects .p-project .detail .detail-value {
+        font-size: 1rem ;
+        font-weight: 400;
+    }
+    .projects .detail .detail-icon {
+        display: block;
+        height: 1rem;
+    }
+}

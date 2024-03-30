@@ -1,0 +1,38 @@
+.about .columns {
+    display: flex;
+    gap: 2rem;
+}
+.about .columns > div {
+    width: 50%;
+}
+
+.about-img-container {
+    text-align: center;
+    height: auto;
+    aspect-ratio: 5/6;
+}
+.about-img {
+    max-width: 100%;
+}
+.about p {
+    font-size: 1.25rem;
+}
+.about p:first-child {
+    margin-top: 0;
+}
+@media screen and (min-width: 799px) {
+    .about p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .about .columns {
+        flex-wrap: wrap;
+        gap: 0;
+        flex-direction: column-reverse;
+    }
+    .about .columns > div {
+        width: 100%;
+    }
+}
