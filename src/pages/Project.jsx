@@ -17,6 +17,7 @@ function Project() {
 	const prefetched = navProps?.state?.project;
 
 	const [project, setProject] = useState({});
+	const [description, setDiscription] = useState('');
 	useEffect(() => {
 		if (prefetched) setProject({
 			title: prefetched?.title,
@@ -27,11 +28,18 @@ function Project() {
 			}
 		});
 		const fetch = async () => {
-			const response = await getCMSContent({name: 'project', payload: url, cached: true});
+			const response = await getCMSContent({name: 'project', payload: url, cached: false});
 			if (response) setProject(response);
 		}
 		fetch();
 	}, []);
+
+	useEffect(() => {
+		let seo_description = '' || project?.seo_description || project?.description?.text?.slice(0,256) || ''; 
+		// let seo_description = '';
+		setDiscription(seo_description);
+		console.log(seo_description);
+	}, [project])
 	
 	return (<>
 		<Header active="project"/>
@@ -40,6 +48,10 @@ function Project() {
 			<meta property="og:title" content={project?.title ? `${project?.title} | Kasha Design` : 'Kasha Design'} />
 			<meta property="og:image" content={project?.banner?.url} />
 		</Helmet>
+		{description?.length > 0 && <Helmet>
+			<meta name="description" content={description}/>
+			<meta name="og:description" content={description}/>
+		</Helmet>}
 		<div className="main-content project">
 			<div className="container">
 				<div className="title">{project?.title}</div>

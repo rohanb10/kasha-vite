@@ -126,8 +126,10 @@ const PROJECT = (url) => `{
         title
         subtitle
         description {
-            html
+            html,
+            text
         }
+        seo_description
         details {
             area
             material
