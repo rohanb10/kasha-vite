@@ -35,7 +35,9 @@ function Home() {
 					<h1 className="kasha-primary">Kasha Design</h1>
 					<div className="hero-actions">
 						<a href="/projects/" className="hero-action">See our work</a>
-						<a href="#" className="hero-action" rel="nofollow" onClick={_ => setOpenContactForm(true)}>Get in touch</a>
+						<a href="#" className="hero-action" rel="nofollow" onClick={e => {e.preventDefault();setOpenContactForm(true)}}>
+							Get in touch
+						</a>
 					</div>
 				</div>
 			</div>
